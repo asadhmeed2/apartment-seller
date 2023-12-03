@@ -68,6 +68,7 @@ label{
     display: grid;
     grid-template-columns: 350px 90px 280px;
     grid-template-areas: 
+    ". l-contentDetails contentDetails"
     "i la a"
     "i lpr p"
     "i lr r"
@@ -112,6 +113,15 @@ button:active{background-color: #443729;}
 
 .result>.label{
     font-weight: bold;
+}
+
+.result>.contentDetails{
+    grid-area: contentDetails;
+    margin-bottom: 10px;
+}
+
+.result>.l-contentDetails{
+    grid-area: l-contentDetails;
 }
 
 .result>.l-addr{

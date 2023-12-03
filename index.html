@@ -39,9 +39,42 @@
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
 
+    
+    <script id="apartment-template" type="text/x-handlebars-template">
+        {{#each apartments}}
+        <div class="result">
+            {{#if immediate}}
+            <div class="l-contentDetails">contact details :</div>
+                <div class="contentDetails">
+                    <div >name: {{contactDetails.name}}</div>
+                    <div >email: {{contactDetails.email}}</div>
+                </div>
+            {{/if}}
+
+            <img src={{img}}/>
+            <p class="l-addr">address: </p>
+            <p class="address">{{address}}</p>
+            <p class="l-price">price: </p>
+            <div class="price"> {{price}}</div>
+
+           
+            <p class="l-rooms">rooms: </p>
+            <div class="rooms">{{rooms}}</div>
+            {{#if parking}}
+                <div class="l-park">parking:</div>
+                <div class="parking">yes<i class="fa-solid fa-square-parking fa-2xl" style="color: #1f2551;"></i></div>
+            {{/if}}
+
+        </div>
+        {{/each}}
+
+        {{#if thereIsResults}}
+            <div class="no-match">no results are match</div>
+        {{/if}}
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script> <script src="apt-data.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
-    <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
     <script src="main.js"></script>
 </body>
