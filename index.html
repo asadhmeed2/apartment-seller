@@ -45,13 +45,15 @@
         <div class="result">
             {{#if immediate}}
             <div class="l-contentDetails">contact details :</div>
-                <div class="contentDetails">
-                    <div >name: {{contactDetails.name}}</div>
-                    <div >email: {{contactDetails.email}}</div>
-                </div>
+                {{#with contactDetails}}
+                    <div class="contentDetails">
+                        <div >name: {{name}}</div>
+                        <div >email: {{email}}</div>
+                    </div>
+                {{/with}}
             {{/if}}
 
-            <img src={{img}}/>
+            <img src={{img}} alt=""/>
             <p class="l-addr">address: </p>
             <p class="address">{{address}}</p>
             <p class="l-price">price: </p>
@@ -62,7 +64,7 @@
             <div class="rooms">{{rooms}}</div>
             {{#if parking}}
                 <div class="l-park">parking:</div>
-                <div class="parking">yes<i class="fa-solid fa-square-parking fa-2xl" style="color: #1f2551;"></i></div>
+                <div class="parking"><i class="fa fa-car" style="font-size:40px;color:rgb(162, 68, 68);"></i></div>
             {{/if}}
 
         </div>
